@@ -1,7 +1,6 @@
 package com.example.sofiyainventoryservice.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
 import java.util.UUID;
