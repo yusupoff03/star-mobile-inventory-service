@@ -54,7 +54,7 @@ public class InventoryController {
         }
          return ResponseEntity.ok(inventoryService.update(inventoryCreateDto,inventoryId,productId));
     }
-    @DeleteMapping("{inventoryId}/delete")
+    @DeleteMapping("/{inventoryId}/delete")
     public ResponseEntity delete(
             @PathVariable UUID inventoryId
     ){
