@@ -8,5 +8,5 @@ import java.util.List;
 import java.util.UUID;
 
 public interface InventoryRepository extends JpaRepository<InventoryEntity, UUID> {
-    List<InventoryEntity> searchInventoryEntitiesByProductIdContainingIgnoreCase(UUID productId, Pageable pageable);
+//    List<InventoryEntity> searchInventoryEntitiesByProductIdContainingIgnoreCase(UUID productId, Pageable pageable);
 }

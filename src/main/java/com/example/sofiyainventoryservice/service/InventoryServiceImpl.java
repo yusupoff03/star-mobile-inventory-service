@@ -32,12 +32,6 @@ public class InventoryServiceImpl implements InventoryService{
         return inventoryRepository.findAll(pageable).getContent();
     }
 
-    @Override
-    public List<InventoryEntity> search(int page, int size, UUID productId) {
-        Sort sort = Sort.by(Sort.Direction.ASC, "productId");
-        Pageable pageable = PageRequest.of(page,size,sort);
-        return inventoryRepository.searchInventoryEntitiesByProductIdContainingIgnoreCase(productId,pageable);
-    }
 
     @Override
     public void deleteById(UUID id) {

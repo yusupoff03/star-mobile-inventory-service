@@ -10,7 +10,7 @@ import java.util.UUID;
 public interface InventoryService {
     InventoryEntity add(InventoryCreateDto inventory);
     List<InventoryEntity> getAll(int size, int page);
-    List<InventoryEntity> search(int page,int size,UUID productId);
+//    List<InventoryEntity> search(int page,int size,UUID productId);
     void deleteById(UUID id);
     InventoryEntity update(InventoryCreateDto update,UUID id,UUID productId);
 }
