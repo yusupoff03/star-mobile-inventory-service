@@ -1,0 +1,22 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: INVENTORY-SERVICE
+  datasource:
+    username: postgres
+    password: 7777
+    url: jdbc:postgresql://localhost:5432/inventory_service_db
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQl94Dialect
+eureka:
+  client:
+    service-url:
+      defaultUrl: ${EUREKA_URI:http://localhost:8761/eureka/}
+    instance:
+      preferIpAddress: true
