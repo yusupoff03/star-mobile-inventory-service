@@ -22,6 +22,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
     private final AuthenticationService authenticationService;
     private final JwtService jwtService;
+    private final String[] inventoryOnly = {"/inventory/**"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -29,12 +30,7 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests((authorizer) -> {
                     authorizer
-                            .requestMatchers(
-                                    "/inventory/add",
-                                    "/inventory/get-all",
-                                    "/inventory/{productId}/update",
-                                    "/inventory/{inventoryId}/delete")
-                            .authenticated();
+                            .requestMatchers(inventoryOnly).authenticated();
                 })
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(new JwtTokenFilter(authenticationService,jwtService),
