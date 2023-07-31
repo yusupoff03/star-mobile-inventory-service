@@ -5,7 +5,7 @@ spring:
     name: INVENTORY-SERVICE
   datasource:
     username: postgres
-    password: 7777
+    password: 1106
     url: jdbc:postgresql://localhost:5432/inventory_service_db
     driver-class-name: org.postgresql.Driver
   jpa:
@@ -13,7 +13,7 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQl94Dialect
+        dialect:org.hibernate.dialect.PostgreSQL94Dialect
 eureka:
   client:
     service-url:
