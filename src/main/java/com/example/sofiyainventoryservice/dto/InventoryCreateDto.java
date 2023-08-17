@@ -12,7 +12,7 @@ import java.util.UUID;
 public class InventoryCreateDto {
     @NotNull(message = "product id not entered")
     private UUID productId;
-
     @NotNull(message = "Product count not entered")
     private Integer productCount;
+    
 }

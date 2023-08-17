@@ -5,8 +5,8 @@ spring:
     name: INVENTORY-SERVICE
   datasource:
     username: postgres
-    password: 1106
-    url: jdbc:postgresql://localhost:5432/inventory_service_db
+    password: 7777
+    url: jdbc:postgresql://localhost:5432/inventory-service-db
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -20,5 +20,8 @@ eureka:
       defaultUrl: ${EUREKA_URI:http://localhost:8761/eureka/}
     instance:
       preferIpAddress: true
-
-
+jwt:
+  secret:
+   key: 753778214125442A472D4B6150645367566B59703373367639792F423F452848
+  access:
+    expiry: 30000
