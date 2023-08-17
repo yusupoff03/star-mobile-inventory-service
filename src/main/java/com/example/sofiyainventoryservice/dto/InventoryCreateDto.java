@@ -14,4 +14,5 @@ public class InventoryCreateDto {
     private UUID productId;
     @NotNull(message = "Product count not entered")
     private Integer productCount;
+    
 }
