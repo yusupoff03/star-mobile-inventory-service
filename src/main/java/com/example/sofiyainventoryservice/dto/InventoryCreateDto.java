@@ -1,6 +1,6 @@
 package com.example.sofiyainventoryservice.dto;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.UUID;
@@ -10,9 +10,9 @@ import java.util.UUID;
 @Setter
 @Builder
 public class InventoryCreateDto {
-    @NotBlank(message = "product id not entered")
+    @NotNull(message = "product id not entered")
     private UUID productId;
 
-    @NotBlank(message = "Product count not entered")
+    @NotNull(message = "Product count not entered")
     private Integer productCount;
 }
