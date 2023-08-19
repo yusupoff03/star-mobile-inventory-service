@@ -173,8 +173,8 @@ class InventoryControllerTest {
         // Call the delete method in the controller
         ResponseEntity responseEntity = inventoryController.delete(inventoryId);
 
-        // Verify that the inventoryService.deleteById() method was called once with the correct parameter
-        verify(inventoryService, times(1)).deleteById(inventoryId);
+        // Verify that the inventoryService.deleteByInventoryId() method was called once with the correct parameter
+        verify(inventoryService, times(1)).deleteByInventoryId(inventoryId);
 
         // Assert the response status
         assertEquals(HttpStatus.NO_CONTENT, responseEntity.getStatusCode());

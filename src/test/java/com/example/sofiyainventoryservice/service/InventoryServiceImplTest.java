@@ -5,7 +5,6 @@ import com.example.sofiyainventoryservice.dto.InventoryCreateDto;
 import com.example.sofiyainventoryservice.entity.InventoryEntity;
 import com.example.sofiyainventoryservice.exception.DataNotFoundException;
 import com.example.sofiyainventoryservice.repository.InventoryRepository;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -95,12 +94,12 @@ public class InventoryServiceImplTest {
 
         when(inventoryRepository.findById(id)).thenReturn(Optional.of(entityToDelete));
 
-        inventoryService.deleteById(id);
+        inventoryService.deleteByInventoryId(id);
 
         // Verify that inventoryRepository.findById() was called with the correct UUID
         verify(inventoryRepository, times(1)).findById(id);
 
-        // Verify that inventoryRepository.deleteById() was called with the correct UUID
+        // Verify that inventoryRepository.deleteByInventoryId() was called with the correct UUID
         verify(inventoryRepository, times(1)).deleteById(id);
     }
 
@@ -111,13 +110,13 @@ public class InventoryServiceImplTest {
 
         when(inventoryRepository.findById(id)).thenReturn(Optional.empty());
 
-        // Call deleteById with the non-existent UUID and expect a DataNotFoundException to be thrown
-        assertThrows(DataNotFoundException.class, () -> inventoryService.deleteById(id));
+        // Call deleteByInventoryId with the non-existent UUID and expect a DataNotFoundException to be thrown
+        assertThrows(DataNotFoundException.class, () -> inventoryService.deleteByInventoryId(id));
 
         // Verify that inventoryRepository.findById() was called with the correct UUID
         verify(inventoryRepository, times(1)).findById(id);
 
-        // Verify that inventoryRepository.deleteById() was not called since the entity was not found
+        // Verify that inventoryRepository.deleteByInventoryId() was not called since the entity was not found
         verify(inventoryRepository, never()).deleteById(any());
     }
 

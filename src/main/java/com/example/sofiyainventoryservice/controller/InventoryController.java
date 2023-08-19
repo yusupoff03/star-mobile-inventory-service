@@ -58,8 +58,15 @@ public class InventoryController {
     public ResponseEntity delete(
             @PathVariable UUID inventoryId
     ){
-         inventoryService.deleteById(inventoryId);
+         inventoryService.deleteByInventoryId(inventoryId);
          return ResponseEntity.status(204).build();
+    }
+    @DeleteMapping("/{productId}/delete")
+    public ResponseEntity deleteByProductId(
+            @PathVariable UUID productId
+    ){
+        inventoryService.deleteByProductId(productId);
+        return ResponseEntity.status(204).build();
     }
 
 
